@@ -9,7 +9,7 @@ using Microsoft.Build.Utilities;
 
 namespace BuildBud.Core
 {
-    internal class TaskLoggerWrapper : ITaskLogger
+    internal class TaskLoggerWrapper : MarshalByRefObject, ITaskLogger
     {
         private readonly TaskLoggingHelper _log;
         public TaskLoggerWrapper(TaskLoggingHelper log)

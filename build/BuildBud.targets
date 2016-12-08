@@ -1,6 +1,15 @@
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
-  <UsingTask  
-    TaskName="DoNothing"  
-    AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll" >  
-  </UsingTask>  
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+	<UsingTask  
+		TaskName="BuildBud.Core.InternalTask"  
+		AssemblyFile="$(MSBuildThisFileDirectory)..\BuildBud.dll">  
+	</UsingTask>
+
+	<Target
+		AfterTargets="AfterCompile"
+		Name="BuildBudTarget"
+		DependsOnTargets="$(BuildBudDependsOnTargets);CoreCompile;CopyFilesToOutputDirectory">
+			<BuildBud.Core.InternalTask
+				AssemblyPath="$(ProjectDir)@(MainAssembly)"
+			/>
+	</Target>
 </Project> 

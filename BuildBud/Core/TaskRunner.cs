@@ -15,18 +15,18 @@ namespace BuildBud.Core
             _log = log;
         }
 
-        public bool RunTasks(string path)
+        public bool RunTasks(string assemblyPath)
         {
-            _log?.LogMessage($"BuildBud: loading assembly \"{path}\".");
+            _log?.LogMessage($"BuildBud: loading assembly \"{assemblyPath}\".");
 
-            var assy = Assembly.Load(path);
+            var assy = Assembly.LoadFrom(assemblyPath);
             var tasks = assy.GetTypes().Where(t => typeof(BuildTask).IsAssignableFrom(t)).ToArray();
 
             _log?.LogMessage($"BuildBud: Loaded. Found \"{tasks.Length}\" tasks.");
 
             foreach (var taskType in tasks)
             {
-                _log?.LogMessage($"BuildBud: Running task \"{taskType.FullName}\"");
+                _log?.LogMessage($"BuildBud: Running task \"{taskType.FullName}\".");
                 var task = (BuildTask)Activator.CreateInstance(taskType);
 
                 task.Log = _log;
