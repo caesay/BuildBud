@@ -1,0 +1,6 @@
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+  <UsingTask  
+    TaskName="DoNothing"  
+    AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll" >  
+  </UsingTask>  
+</Project> 
