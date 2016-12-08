@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>BuildBud</id>
-    <version>1.0</version>
+    <version>$version$</version>
     <authors>caesay</authors>
     <owners>caesay</owners>
     <licenseUrl>https://github.com/caesay/BuildBud/blob/master/LICENSE</licenseUrl>
