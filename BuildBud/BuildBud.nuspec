@@ -11,4 +11,8 @@
     <description>Allows you to create post-build MSBuild tasks within the currently building assembly</description>
     <tags>C# MSBuild Build</tags>
   </metadata>
+  <files>
+    <file src="build\**" target="build" />
+    <file src="bin\Release\BuildBud.dll" target="lib\net40" />
+  </files>
 </package>
