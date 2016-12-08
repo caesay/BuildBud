@@ -1,7 +1,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
 	<UsingTask  
 		TaskName="BuildBud.Core.InternalTask"  
-		AssemblyFile="$(MSBuildThisFileDirectory)..\BuildBud.dll">  
+		AssemblyFile="$(MSBuildThisFileDirectory)..\lib\BuildBud.dll">  
 	</UsingTask>
 
 	<Target
