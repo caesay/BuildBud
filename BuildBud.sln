@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C67C6D87
 		build\BuildBud.targets = build\BuildBud.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildBud.Tests", "BuildBud.Tests\BuildBud.Tests.csproj", "{53574C04-6B19-49BD-8D4D-CD2B41F866C9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,10 +20,6 @@ Global
 		{3AC7B3AB-F1B8-42DE-B019-67A62CB22CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC7B3AB-F1B8-42DE-B019-67A62CB22CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC7B3AB-F1B8-42DE-B019-67A62CB22CFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53574C04-6B19-49BD-8D4D-CD2B41F866C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53574C04-6B19-49BD-8D4D-CD2B41F866C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53574C04-6B19-49BD-8D4D-CD2B41F866C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53574C04-6B19-49BD-8D4D-CD2B41F866C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
