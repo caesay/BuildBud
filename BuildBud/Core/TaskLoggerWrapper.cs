@@ -42,36 +42,36 @@ namespace BuildBud.Core
             return _log.GetResourceMessage(resourceName);
         }
 
-        public void LogMessage(string message, params object[] messageArgs)
+        public void LogMessage(string message)
         {
-            _log.LogMessage(message, messageArgs);
+            _log.LogMessage(message);
         }
 
-        public void LogMessage(MessageSeverity importance, string message, params object[] messageArgs)
+        public void LogMessage(MessageSeverity importance, string message)
         {
-            _log.LogMessage((MessageImportance)importance, message, messageArgs);
+            _log.LogMessage((MessageImportance)importance, message);
         }
 
         public void LogMessage(string subcategory, string code, string helpKeyword, string file, int lineNumber, int columnNumber,
-            int endLineNumber, int endColumnNumber, MessageSeverity importance, string message, params object[] messageArgs)
+            int endLineNumber, int endColumnNumber, MessageSeverity importance, string message)
         {
-            _log.LogMessage(subcategory, code, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, importance, message, messageArgs);
+            _log.LogMessage(subcategory, code, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, importance, message);
         }
 
         public void LogCriticalMessage(string subcategory, string code, string helpKeyword, string file, int lineNumber,
-            int columnNumber, int endLineNumber, int endColumnNumber, string message, params object[] messageArgs)
+            int columnNumber, int endLineNumber, int endColumnNumber, string message)
         {
-            _log.LogCriticalMessage(subcategory, code, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message, messageArgs);
+            _log.LogCriticalMessage(subcategory, code, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message);
         }
 
-        public void LogMessageFromResources(string messageResourceName, params object[] messageArgs)
+        public void LogMessageFromResources(string messageResourceName)
         {
-            _log.LogMessageFromResources(messageResourceName, messageArgs);
+            _log.LogMessageFromResources(messageResourceName);
         }
 
-        public void LogMessageFromResources(MessageSeverity importance, string messageResourceName, params object[] messageArgs)
+        public void LogMessageFromResources(MessageSeverity importance, string messageResourceName)
         {
-            _log.LogMessageFromResources((MessageImportance)importance, messageResourceName, messageArgs);
+            _log.LogMessageFromResources((MessageImportance)importance, messageResourceName);
         }
 
         public void LogExternalProjectStarted(string message, string helpKeyword, string projectFile, string targetNames)
@@ -94,38 +94,37 @@ namespace BuildBud.Core
             _log.LogCommandLine((MessageImportance)importance, commandLine);
         }
 
-        public void LogError(string message, params object[] messageArgs)
+        public void LogError(string message)
         {
-            _log.LogError(message, messageArgs);
+            _log.LogError(message);
         }
 
         public void LogError(string subcategory, string errorCode, string helpKeyword, string file, int lineNumber, int columnNumber,
-            int endLineNumber, int endColumnNumber, string message, params object[] messageArgs)
+            int endLineNumber, int endColumnNumber, string message)
         {
-            _log.LogError(subcategory, errorCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message, messageArgs);
+            _log.LogError(subcategory, errorCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message);
         }
 
-        public void LogErrorFromResources(string messageResourceName, params object[] messageArgs)
+        public void LogErrorFromResources(string messageResourceName)
         {
-            _log.LogErrorFromResources(messageResourceName, messageArgs);
+            _log.LogErrorFromResources(messageResourceName);
         }
 
         public void LogErrorFromResources(string subcategoryResourceName, string errorCode, string helpKeyword, string file,
-            int lineNumber, int columnNumber, int endLineNumber, int endColumnNumber, string messageResourceName,
-            params object[] messageArgs)
+            int lineNumber, int columnNumber, int endLineNumber, int endColumnNumber, string messageResourceName)
         {
-            _log.LogErrorFromResources(subcategoryResourceName, errorCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName, messageArgs);
+            _log.LogErrorFromResources(subcategoryResourceName, errorCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName);
         }
 
-        public void LogErrorWithCodeFromResources(string messageResourceName, params object[] messageArgs)
+        public void LogErrorWithCodeFromResources(string messageResourceName)
         {
-            _log.LogErrorWithCodeFromResources(messageResourceName, messageArgs);
+            _log.LogErrorWithCodeFromResources(messageResourceName);
         }
 
         public void LogErrorWithCodeFromResources(string subcategoryResourceName, string file, int lineNumber, int columnNumber,
-            int endLineNumber, int endColumnNumber, string messageResourceName, params object[] messageArgs)
+            int endLineNumber, int endColumnNumber, string messageResourceName)
         {
-            _log.LogErrorWithCodeFromResources(subcategoryResourceName, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName, messageArgs);
+            _log.LogErrorWithCodeFromResources(subcategoryResourceName, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName);
         }
 
         public void LogErrorFromException(Exception exception)
@@ -143,38 +142,37 @@ namespace BuildBud.Core
             _log.LogErrorFromException(exception, showStackTrace, showDetail, file);
         }
 
-        public void LogWarning(string message, params object[] messageArgs)
+        public void LogWarning(string message)
         {
-            _log.LogWarning(message, messageArgs);
+            _log.LogWarning(message);
         }
 
         public void LogWarning(string subcategory, string warningCode, string helpKeyword, string file, int lineNumber,
-            int columnNumber, int endLineNumber, int endColumnNumber, string message, params object[] messageArgs)
+            int columnNumber, int endLineNumber, int endColumnNumber, string message)
         {
-            _log.LogWarning(subcategory, warningCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message, messageArgs);
+            _log.LogWarning(subcategory, warningCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, message);
         }
 
-        public void LogWarningFromResources(string messageResourceName, params object[] messageArgs)
+        public void LogWarningFromResources(string messageResourceName)
         {
-            _log.LogWarningFromResources(messageResourceName, messageArgs);
+            _log.LogWarningFromResources(messageResourceName);
         }
 
         public void LogWarningFromResources(string subcategoryResourceName, string warningCode, string helpKeyword, string file,
-            int lineNumber, int columnNumber, int endLineNumber, int endColumnNumber, string messageResourceName,
-            params object[] messageArgs)
+            int lineNumber, int columnNumber, int endLineNumber, int endColumnNumber, string messageResourceName)
         {
-            _log.LogWarningFromResources(subcategoryResourceName, warningCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName, messageArgs);
+            _log.LogWarningFromResources(subcategoryResourceName, warningCode, helpKeyword, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName);
         }
 
-        public void LogWarningWithCodeFromResources(string messageResourceName, params object[] messageArgs)
+        public void LogWarningWithCodeFromResources(string messageResourceName)
         {
-            _log.LogWarningWithCodeFromResources(messageResourceName, messageArgs);
+            _log.LogWarningWithCodeFromResources(messageResourceName);
         }
 
         public void LogWarningWithCodeFromResources(string subcategoryResourceName, string file, int lineNumber, int columnNumber,
-            int endLineNumber, int endColumnNumber, string messageResourceName, params object[] messageArgs)
+            int endLineNumber, int endColumnNumber, string messageResourceName)
         {
-            _log.LogWarningWithCodeFromResources(subcategoryResourceName, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName, messageArgs);
+            _log.LogWarningWithCodeFromResources(subcategoryResourceName, file, lineNumber, columnNumber, endLineNumber, endColumnNumber, messageResourceName);
         }
 
         public void LogWarningFromException(Exception exception)
