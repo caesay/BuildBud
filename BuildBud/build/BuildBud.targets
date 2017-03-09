@@ -10,6 +10,8 @@
 		DependsOnTargets="$(BuildBudDependsOnTargets);CoreCompile;CopyFilesToOutputDirectory">
 			<BuildBud.Core.InternalTask
 				AssemblyPath="$(ProjectDir)@(MainAssembly)"
+        ProjectDir="$(ProjectDir)"
+        SolutionDir="$(SolutionDir)"
 			/>
 	</Target>
 </Project> 

@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildTask.cs" />
-    <Compile Include="Core\BuildEngineExtensions.cs" />
     <Compile Include="Core\TaskRunner.cs" />
     <Compile Include="ITaskLogger.cs" />
     <Compile Include="Core\TaskLoggerWrapper.cs" />
@@ -63,6 +62,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="BuildBud.nuspec" />
+    <None Include="build\BuildBud.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

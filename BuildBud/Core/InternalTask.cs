@@ -11,6 +11,8 @@ namespace BuildBud.Core
     public class InternalTask : Microsoft.Build.Utilities.AppDomainIsolatedTask
     {
         public string AssemblyPath { get; set; }
+        public string ProjectDir { get; set; }
+        public string SolutionDir { get; set; }
 
         public InternalTask()
         {
@@ -43,10 +45,7 @@ namespace BuildBud.Core
             TaskRunner proxy = (TaskRunner)domain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly().FullName, "BuildBud.Core.TaskRunner");
 
             proxy.SetLog(new TaskLoggerWrapper(Log));
-
-            var projectDir = BuildEngine.GetEnvironmentVariable("ProjectDir", true).First();
-            var solutionDir = BuildEngine.GetEnvironmentVariable("SolutionDir", true).First();
-            proxy.SetDirs(projectDir, solutionDir);
+            proxy.SetDirs(ProjectDir, SolutionDir);
 
             bool result = proxy.RunTasks(AssemblyPath);
 
