@@ -34,7 +34,6 @@ namespace BuildBud.Core
                 return true;
             }
 
-
             AppDomainSetup domaininfo = new AppDomainSetup();
             domaininfo.ApplicationBase = Path.GetDirectoryName(AssemblyPath);
             Evidence evidence = AppDomain.CurrentDomain.Evidence;
@@ -44,6 +43,11 @@ namespace BuildBud.Core
             TaskRunner proxy = (TaskRunner)domain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly().FullName, "BuildBud.Core.TaskRunner");
 
             proxy.SetLog(new TaskLoggerWrapper(Log));
+
+            var projectDir = BuildEngine.GetEnvironmentVariable("ProjectDir", true).First();
+            var solutionDir = BuildEngine.GetEnvironmentVariable("SolutionDir", true).First();
+            proxy.SetDirs(projectDir, solutionDir);
+
             bool result = proxy.RunTasks(AssemblyPath);
 
             AppDomain.Unload(domain);

@@ -10,9 +10,17 @@ namespace BuildBud.Core
     internal class TaskRunner : MarshalByRefObject
     {
         private ITaskLogger _log = null;
+        private string _projectDir;
+        private string _solutionDir;
         public void SetLog(ITaskLogger log)
         {
             _log = log;
+        }
+
+        public void SetDirs(string projectDir, string solutionDir)
+        {
+            _projectDir = projectDir;
+            _solutionDir = solutionDir;
         }
 
         public bool RunTasks(string assemblyPath)
@@ -30,6 +38,8 @@ namespace BuildBud.Core
                 var task = (BuildTask)Activator.CreateInstance(taskType);
 
                 task.Log = _log;
+                task.ProjectDir = _projectDir;
+                task.SolutionDir = _solutionDir;
 
                 if (!task.Execute())
                 {
